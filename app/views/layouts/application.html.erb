@@ -29,16 +29,15 @@
     <script src="/docs/5.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
   </head>
 
-  <body class="mt-8 bg-gradient-secondary">
-
+  <body class="bg-gradient-secondary">
     <header class="container-flex">
       <!-- NAVBAR -->
-        <nav class="bg-gradient-light navbar fixed-top navbar-expand-lg shadow-none " id="navbarBlur" navbar-scroll="true">
+        <nav class="bg-gradient-light navbar fixed-top navbar-expand-lg shadow-none" id="navbarBlur" navbar-scroll="true">
           <div class="container-fluid nav nav-tabs-responsive">
           <!-- LEFT SIDE -->
-            <%= link_to 'Home', root_path, class: "text-rose btn btn btn-outline-primary font-weight-bold text-xs" %>
-            <%= link_to 'Category', categories_path, class: "text-rose btn btn btn-outline-primary font-weight-bold text-xs" %>
-            <%= link_to 'Role', roles_path, class: "text-rose btn btn btn-outline-primary font-weight-bold text-xs" %>
+            <%= link_to 'Home', root_path, class: "text-rose btn btn btn-outline-primary font-weight-bold text-xs m-2" %>
+            <%= link_to 'Category', categories_path, class: "text-rose btn btn btn-outline-primary font-weight-bold text-xs m-2" %>
+            <%= link_to 'Role', roles_path, class: "text-rose btn btn btn-outline-primary font-weight-bold text-xs m-2" %>
             <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
           <!-- SEARCH BAR -->
                 <div class="ms-md-auto pe-md-3 d-flex align-items-center">
@@ -52,7 +51,17 @@
                   <li class="nav-item d-flex align-items-center">
                     <a href="javascript:;" class="nav-link text-rose font-weight-bold px-0" href="/perfil">
                       <i class="fa fa-user me-sm-1"></i>
-                      <span class="d-sm-inline d-none text-primary">Sign In</span>
+                      <div>
+                          <% if user_signed_in? %>
+                            Logado como: <strong><%= current_user.email %></strong>.
+                            <%= link_to 'Editar perfil', edit_user_registration_path, :class => 'btn btn-outline-primary text-rose navbar-link' %> |
+                            <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'btn btn-outline-primary text-rose navbar-link'  %>
+                          <% else %>
+                            <%= link_to "Registrar-se", new_user_registration_path, :class => 'btn btn-outline-primary text-rose navbar-link'  %> |
+                            <%= link_to "Login", new_user_session_path, :class => 'btn btn-outline-primary text-rose navbar-link'  %>
+                          <% end %>
+                        </div>
+                      </div>
                     </a>
                   </li>
                   <li class="nav-item px-3 d-flex align-items-center">
@@ -64,9 +73,19 @@
             </div>
           </div>
         </nav>
-    </header>
-    <%= yield %>
-    <footer class="fixed-bottom text-dark bg-gradient-light border-top border-primary">
+        <% if notice %>
+            <p class="alert alert-primary text-white"><%= notice %></p>
+          <% end %>
+          <% if alert %>
+              <p class="alert alert-primary text-white"><%= alert %></p>
+          <% end %>
+    </header> 
+    <div class=" fill">
+      <div class="mt-8">
+        <%= yield %>
+      </div>
+    </div>
+    <footer class="align-bottom text-dark bg-gradient-light border-top border-primary">
       <!-- FOOTER CONTENT -->
         <div class="container-fluid py-2">     
           <div class="card-body position-relative z-index-1 p-3">
