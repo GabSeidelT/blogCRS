@@ -29,20 +29,16 @@
     <script src="/docs/5.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
   </head>
 
-  <body class="bg-gradient-secondary">
+  <body class="mt-8 bg-gradient-secondary">
 
     <header class="container-flex">
       <!-- NAVBAR -->
         <nav class="bg-gradient-light navbar fixed-top navbar-expand-lg shadow-none " id="navbarBlur" navbar-scroll="true">
           <div class="container-fluid nav nav-tabs-responsive">
           <!-- LEFT SIDE -->
-              <nav aria-label="breadcrumb">
-                <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0">
-                  <li class="breadcrumb-item text-sm"><a class="opacity-5 text-primary" href="javascript:;">Pages</a></li>
-                  <li class="breadcrumb-item text-sm text-primary active" aria-current="page">Dashboard</li>
-                </ol>
-                <h6 class="font-weight-bolder text-primary mb-0">Dashboard</h6>
-              </nav>
+            <%= link_to 'Home', root_path, class: "text-rose btn btn btn-outline-primary font-weight-bold text-xs" %>
+            <%= link_to 'Category', categories_path, class: "text-rose btn btn btn-outline-primary font-weight-bold text-xs" %>
+            <%= link_to 'Role', roles_path, class: "text-rose btn btn btn-outline-primary font-weight-bold text-xs" %>
             <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
           <!-- SEARCH BAR -->
                 <div class="ms-md-auto pe-md-3 d-flex align-items-center">
@@ -70,7 +66,7 @@
         </nav>
     </header>
     <%= yield %>
-    <footer class=" text-dark bg-gradient-light border-top border-primary">
+    <footer class="fixed-bottom text-dark bg-gradient-light border-top border-primary">
       <!-- FOOTER CONTENT -->
         <div class="container-fluid py-2">     
           <div class="card-body position-relative z-index-1 p-3">
