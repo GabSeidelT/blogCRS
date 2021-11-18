@@ -57,3 +57,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 #Gem DEVISE for authentication
 gem 'devise'
+gem 'paperclip', '~> 6.1'

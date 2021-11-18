@@ -4,6 +4,6 @@ Rails.application.routes.draw do
   root to: 'home#index'
   resources :categories
   resources :roles
-  devise_for :admins
+  resources :posts
   devise_for :users, controllers: { sessions: 'users/sessions' }
 end

@@ -38,6 +38,7 @@
             <%= link_to 'Home', root_path, class: "text-rose btn btn btn-outline-primary font-weight-bold text-xs m-2" %>
             <%= link_to 'Category', categories_path, class: "text-rose btn btn btn-outline-primary font-weight-bold text-xs m-2" %>
             <%= link_to 'Role', roles_path, class: "text-rose btn btn btn-outline-primary font-weight-bold text-xs m-2" %>
+            <%= link_to 'Post', posts_path, class: "text-rose btn btn btn-outline-primary font-weight-bold text-xs m-2" %>
             <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
           <!-- SEARCH BAR -->
                 <div class="ms-md-auto pe-md-3 d-flex align-items-center">
@@ -73,13 +74,15 @@
             </div>
           </div>
         </nav>
-        <% if notice %>
-            <p class="alert alert-primary text-white"><%= notice %></p>
-          <% end %>
-          <% if alert %>
-              <p class="alert alert-primary text-white"><%= alert %></p>
-          <% end %>
     </header> 
+    <div class="mt-8">
+      <% if notice %>
+        <p class="alert alert-primary text-white"><%= notice %></p>
+      <% end %>
+      <% if alert %>
+          <p class="alert alert-primary text-white"><%= alert %></p>
+      <% end %>
+    </div>
     <div class=" fill">
       <div class="mt-8">
         <%= yield %>
