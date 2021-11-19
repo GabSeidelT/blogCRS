@@ -7,6 +7,7 @@ class PostsController < ApplicationController
 
     def new
         @post = Post.new
+        @post_cats = @post.post_cats.select(:category_id)
         @users = User.order(:email)
         @categories = Category.order(:name)
     end
@@ -20,7 +21,6 @@ class PostsController < ApplicationController
                     PostCat.create(post_id: @post.id, category_id: id)
                 end
             end
-            
             redirect_to posts_path
         else
             render :new, status: :unprocessable_entity
