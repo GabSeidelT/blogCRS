@@ -5,13 +5,15 @@
             <%= form.select(:user_id, @users.collect {|user| [user.email, user.id]}, class: "bg-light form-control", prompt: 'select') %>
             <label class="form-label"></label-->
         </div>
-        
-            <%= form.input :img, as: :file %>
-        
+        <div class="input-group input-group-outline mb-3">
+            <p class="text-rose m-2 font-weight-bold">  Imagem : </p>
+            <label class="form-label"></label>
+            <%= form.file_field :image %>
+        </div>
         <div class="input-group input-group-outline mb-3">
             <p class="text-rose m-2 font-weight-bold">  Nome : </p>
             <label class="form-label"></label>
-            <%= form.text_field :name, class: "bg-light form-control", onfocus: "focused(this)", onfocusout: "defocused(this)" %>
+            <%= form.text_field :name, class: "bg-light form-control"%>
         </div>
         <div class="input-group input-group-outline mb-3">
             <p class="text-rose m-2 font-weight-bold">  Resumo : </p>
@@ -22,6 +24,18 @@
             <p class="text-rose m-2 font-weight-bold">  Conteúdo : </p>
             <label class="form-label"></label>
             <%= form.text_area :content, class: "bg-light form-control", size: "60x10" %>
+        </div>
+        <div class="input-group input-group-outline mb-3">
+            <p class="text-rose m-2 font-weight-bold">  Categorias : </p>
+            <label class="form-label"></label>
+            <ul>
+              <% @categories.each do |category| %>
+                    <li>
+                        <%= check_box_tag 'category_ids[]', category.id, @post_cats.filter { |a| a.category_id == category.id }.present? -%>
+                        <%= h category.name -%>
+                    </li>
+                <% end %>
+                </ul>
         </div>
         <div class="text-center">
             <%= form.submit 'Salvar', class: "btn btn-lg bg-gradient-primary btn-lg w-100 mt-4 mb-0" %>
