@@ -1,0 +1,25 @@
+<div class="card-body">
+    <%= form_with model: @role do |form| %>
+        <div class="input-group input-group-outline mb-3">
+            <p class="text-rose m-2 font-weight-bold">  Username : </p>
+            <label class="form-label"></label>
+            <%= form.text_field :username, maxlength: 16, class: "bg-light form-control", onfocus: "focused(this)", onfocusout: "defocused(this)" %>
+        </div>
+        <div class="input-group input-group-outline mb-3">
+            <p class="text-rose m-2 font-weight-bold">  Usuários : </p>
+            <label class="form-label"></label>
+            <ul>
+                <% @users.each do |user| %>
+                    <li>
+                        <%= check_box_tag 'user_ids[]', user.id -%>
+                        <%= h user.email -%>
+                    </li>
+                <% end %>
+            </ul>
+        </div>
+        <div class="text-center">
+            <%= form.submit 'Salvar', class: "btn btn-lg bg-gradient-primary btn-lg w-100 mt-4 mb-0" %>
+            <%= link_to 'Cancelar', roles_path, class: "bg-light btn btn-lg btn-outline-primary text-primary btn-lg w-100 mt-4 mb-0" %>
+        </div>
+    <% end %>
+</div>

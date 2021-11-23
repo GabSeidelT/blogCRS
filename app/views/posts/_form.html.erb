@@ -28,13 +28,13 @@
             <p class="text-rose m-2 font-weight-bold">  Categorias : </p>
             <label class="form-label"></label>
             <ul>
-              <% @categories.each do |category| %>
+                <% @categories.each do |category| %>
                     <li>
                         <%= check_box_tag 'category_ids[]', category.id, @post_cats.filter { |a| a.category_id == category.id }.present? -%>
                         <%= h category.name -%>
                     </li>
                 <% end %>
-                </ul>
+            </ul>
         </div>
         <div class="text-center">
             <%= form.submit 'Salvar', class: "btn btn-lg bg-gradient-primary btn-lg w-100 mt-4 mb-0" %>
