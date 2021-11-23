@@ -1,0 +1,34 @@
+<div class="fill">
+  <div class="container p-0 bg-gradient-light border-radius-lg">
+      <div class="card card-plain">
+          <div class="card-header">
+              <h4 class="font-weight-bolder">Mudar sua senha</h4>
+          </div>
+          <div class="card-body">
+            <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+              <%= render "users/shared/error_messages", resource: resource %>
+              <%= f.hidden_field :reset_password_token %>
+
+              <div class="input-group input-group-outline mb-3">
+                  <p class="text-rose m-2 font-weight-bold">  Nova senha : </p>
+                  <label class="form-label"></label>
+                  <% if @minimum_password_length %>
+                        <em>(<%= @minimum_password_length %> caracteres apenas)</em><br />
+                  <% end %>
+                  <%= f.password_field :password, autofocus: true, autocomplete: "new-password" %>
+              </div>
+
+              <div class="input-group input-group-outline mb-3">
+                  <p class="text-rose m-2 font-weight-bold">  Confirmar nova senha : </p>
+                  <label class="form-label"></label>
+                  <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+              </div>
+                <div class="actions">
+                  <%= f.submit "Confirmar", class: "btn btn-lg bg-gradient-primary btn-lg w-100 mt-4 mb-0" %>
+                </div>
+              <% end %>
+
+            <%= render "users/shared/links" %>
+      </div>
+    </div>
+</div>

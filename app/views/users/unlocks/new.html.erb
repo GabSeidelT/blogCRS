@@ -1,0 +1,26 @@
+<div class="fill">
+  <div class="container p-0 bg-gradient-light border-radius-lg">
+    <div class="card card-plain">
+      <div class="card-header">
+          <h4 class="font-weight-bolder">Reenviar instruções de desbloqueio</h4>
+      </div>
+      <div class="card-body">
+        <%= form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f| %>
+          <%= render "users/shared/error_messages", resource: resource %>
+
+          <div class="input-group input-group-outline mb-3">
+            <p class="text-rose m-2 font-weight-bold">  Email : </p>
+            <label class="form-label"></label>
+            <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+          </div>
+
+          <div class="actions">
+            <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+          </div>
+        <% end %>
+
+        <%= render "users/shared/links" %>
+      </div>
+    </div>
+  </div>
+</div>
