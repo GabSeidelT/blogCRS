@@ -23,7 +23,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
     <!-- CSS Files -->
     <link id="pagestyle" href="./assets/css/material-dashboard.css?v=3.0.0" rel="stylesheet" />
-    <script src="/docs/5.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <%# <script src="/docs/5.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script> %>
   </head>
 
   <body class="bg-gradient-secondary">
@@ -32,12 +32,14 @@
         <nav class="bg-gradient-light navbar fixed-top navbar-expand-lg shadow-none" id="navbarBlur" navbar-scroll="true">
           <div class="container-fluid nav nav-tabs-responsive">
           <!-- LEFT SIDE -->
-            <%= link_to 'Home', root_path, class: "text-rose btn btn btn-outline-primary font-weight-bold text-xs m-2" %>
-            <%= link_to 'Category', categories_path, class: "text-rose btn btn btn-outline-primary font-weight-bold text-xs m-2" %>
-            <%= link_to 'Role', roles_path, class: "text-rose btn btn btn-outline-primary font-weight-bold text-xs m-2" %>
-            <%= link_to 'Post', posts_path, class: "text-rose btn btn btn-outline-primary font-weight-bold text-xs m-2" %>
-            <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
+            
+              <%= link_to 'Home', root_path, class: "text-rose btn btn btn-outline-primary font-weight-bold text-xs m-2" %>
+              <%= link_to 'Category', categories_path, class: "text-rose btn btn btn-outline-primary font-weight-bold text-xs m-2" %>
+              <%= link_to 'Role', roles_path, class: "text-rose btn btn btn-outline-primary font-weight-bold text-xs m-2" %>
+              <%= link_to 'Post', posts_path, class: "text-rose btn btn btn-outline-primary font-weight-bold text-xs m-2" %>
+            
           <!-- SEARCH BAR -->
+            <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
                 <div class="ms-md-auto pe-md-3 d-flex align-items-center">
                   <div class="input-group input-group-outline focused is-focused">
                     <label class="form-label">Procure aqui</label>
