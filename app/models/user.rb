@@ -5,4 +5,10 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :posts
   has_one :ability
+  belongs_to :role
+
+  def admin?
+    role_id == 1
+  end
+  
 end

@@ -1,4 +1,5 @@
 class Role < ApplicationRecord
+    has_many :user
 
     validates_presence_of :username
 
