@@ -4,24 +4,23 @@ class Ability
   include CanCan::Ability
   
 
-  # def initialize(user)
-  #   # if user.admin?
-  #   #   can :manage, :all
-  #   # else
-  #   #   can [:read, :update, :destroy], Car
-  #   #   can :manage, User
-  #   # end
-  # #   if user.admin?
-  # #     can :manage, :all
-  # #   else
-  # #     can :read, Post
-  # #     can :manage, User
-  # #   end
+  def initialize(user)
+    if user.admin?
+      can :manage, :all
+    
+    end
 
-  # #   if user.comment?
-  # #     can [:read, :update, :destroy], Comment
-  # #   end
+    if user.comment?
+      can :manage, Comment
+      can [:read, :update, :destroy], User
+    end
 
-  # end
+    if user.regular?
+      can [:read, :update, :destroy], User
+      can :read, Post
+      can :read, Category
+    end
+
+  end
 
 end
