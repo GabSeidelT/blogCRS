@@ -4,8 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :posts
-  has_one :ability
   belongs_to :role
+  has_one :ability
 
   def admin?
     role_id == 1

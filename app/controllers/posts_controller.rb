@@ -7,6 +7,11 @@ class PostsController < ApplicationController
         @users = User.order(:email)
     end
 
+    def show
+        @post = Post.find(params[:id])
+      
+      end
+
     def new
         @post = Post.new
         get_params
