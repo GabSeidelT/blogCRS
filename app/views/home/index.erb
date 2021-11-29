@@ -35,10 +35,10 @@
                       <h6 class="card-text text-rose"><%= post.name %></h6>
                       <p class="card-text"><%= post.summary %>.</p>
                       <div class="d-flex justify-content-between align-items-center">
+                        <small class="text-muted fixd-bottom"><%= post.created_at %></small>
                         <div class="card-footer" :last-child>
                           <%= link_to "Ver", post_path(id: post.id), :class => 'btn btn-sm text-dark btn-outline-secondary' %>
                         </div>
-                        <small class="text-muted fixd-bottom"><%= post.created_at %></small>
                       </div>
                     </div>
                 </div>

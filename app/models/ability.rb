@@ -5,22 +5,25 @@ class Ability
   
 
   def initialize(user)
-    
-    if user.admin?
-      can :manage, :all
+    if user.present?
+      if user.admin?
+        can :manage, :all
+      end
+      
+      if user.comment?
+        can :show, Post
+        # can :manage, Comment
+        can [:read, :update, :destroy], User
+      end
+      
+      if user.regular?
+        can [:read, :update, :destroy], User
+        can :show, Post
+      end
+    else
+      can :show, Post
     end
-
-    if user.comment?
-      can :manage, Comment
-      can [:read, :update, :destroy], User
-    end
-
-    if user.regular?
-      can [:read, :update, :destroy], User
-      can :read, Post
-      can :read, Category
-    end
-
+      
   end
 
 end

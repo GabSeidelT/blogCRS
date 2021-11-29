@@ -34,13 +34,13 @@
           <!-- LEFT SIDE -->
             <%= link_to 'Home', root_path, class: "text-rose btn btn btn-outline-primary font-weight-bold text-xs m-2" %>
             <% if user_signed_in? %>
-              <% if can? :read, Category %>
+              <% if can? :manage, Category %>
                 <%= link_to 'Category', categories_path, class: "text-rose btn btn btn-outline-primary font-weight-bold text-xs m-2" %>
               <% end %>
               <% if can? :manage, Role %>
                 <%= link_to 'Role', roles_path, class: "text-rose btn btn btn-outline-primary font-weight-bold text-xs m-2" %>
               <% end %>
-              <% if can? :read, Post %>
+              <% if can? :manage, Post %>
                 <%= link_to 'Post', posts_path, class: "text-rose btn btn btn-outline-primary font-weight-bold text-xs m-2" %>
               <% end %>
             <% end %>
@@ -82,10 +82,20 @@
     </header> 
     <div class="mt-7 mx-4">
       <% if notice %>
-        <p class="alert alert-primary text-white"><%= notice %></p>
+        <div class="alert alert-primary alert-dismissible text-white" role="alert">
+          <span class="text-sm"> <%= notice %> </span>
+          <button type="button" class="btn-close text-lg py-3 opacity-10" data-bs-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
       <% end %>
       <% if alert %>
-          <p class="alert alert-primary text-white"><%= alert %></p>
+        <div class="alert alert-secondary alert-dismissible text-white" role="alert">
+          <span class="text-sm"> <%= alert %> </span>
+          <button type="button" class="btn-close text-lg py-3 opacity-10" data-bs-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
       <% end %>
     </div>
     <div class=" fill">
