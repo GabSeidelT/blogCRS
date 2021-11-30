@@ -39,15 +39,6 @@ class RolesController < ApplicationController
           render :edit, status: :unprocessable_entity
         end
     end
-
-    def destroy
-        @role = Role.find(params[:id])
-        
-        if @role.present?
-           @role.destroy 
-        end
-        redirect_to roles_path
-    end
     
     private
     def role_params
