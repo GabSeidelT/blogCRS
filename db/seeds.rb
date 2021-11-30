@@ -9,6 +9,5 @@
 
 admin = Role.create(username: 'Admin')
 Role.create(username: 'Comentarista')
-Role.create(username: 'Regular')
 
 User.create(email: 'admin@admin.com', password:'123123', role_id: admin.id)

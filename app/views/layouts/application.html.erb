@@ -10,20 +10,10 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="apple-touch-icon" sizes="76x76" href="./assets/img/apple-icon.png">
-    <link rel="icon" type="image/png" href="./assets/img/favicon.png">
     <!--     Fonts and icons     -->
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
-    <!-- Nucleo Icons -->
-    <link href="./assets/css/nucleo-icons.css" rel="stylesheet" />
-    <link href="./assets/css/nucleo-svg.css" rel="stylesheet" />
     <!-- Font Awesome Icons -->
     <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
-    <!-- Material Icons -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
-    <!-- CSS Files -->
-    <link id="pagestyle" href="./assets/css/material-dashboard.css?v=3.0.0" rel="stylesheet" />
-    <%# <script src="/docs/5.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script> %>
   </head>
 
   <body class="bg-gradient-secondary">
@@ -32,7 +22,7 @@
         <nav class="bg-gradient-light navbar fixed-top navbar-expand-lg shadow-none" id="navbarBlur" navbar-scroll="true">
           <div class="container-fluid nav nav-tabs-responsive">
           <!-- LEFT SIDE -->
-            <%= link_to 'Home', root_path, class: "text-rose btn btn btn-outline-primary font-weight-bold text-xs m-2" %>
+            <%= link_to 'Home', root_path, class: "text-white btn btn btn-outline-primary bg-gradient-primary font-weight-bold text-xs m-2" %>
             <% if user_signed_in? %>
               <% if can? :manage, Category %>
                 <%= link_to 'Category', categories_path, class: "text-rose btn btn btn-outline-primary font-weight-bold text-xs m-2" %>

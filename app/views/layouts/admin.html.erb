@@ -10,20 +10,10 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="apple-touch-icon" sizes="76x76" href="./assets/img/apple-icon.png">
-    <link rel="icon" type="image/png" href="./assets/img/favicon.png">
     <!--     Fonts and icons     -->
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
-    <!-- Nucleo Icons -->
-    <link href="./assets/css/nucleo-icons.css" rel="stylesheet" />
-    <link href="./assets/css/nucleo-svg.css" rel="stylesheet" />
     <!-- Font Awesome Icons -->
     <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
-    <!-- Material Icons -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
-    <!-- CSS Files -->
-    <link id="pagestyle" href="./assets/css/material-dashboard.css?v=3.0.0" rel="stylesheet" />
-    <%# <script src="/docs/5.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script> %>
   </head>
 
   <body class="bg-gradient-secondary">
@@ -38,37 +28,35 @@
         <div class="collapse navbar-collapse  w-auto  max-height-vh-100" id="sidenav-collapse-main">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link text-dark active bg-gradient-primary" href="/">
+              <a class="nav-link text-dark " href="/">
                 <span class="nav-link-text ms-1">Home</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-dark " href="/categories">
+              <a class="nav-link text-dark <%= controller_name == 'categories' ? 'active bg-gradient-primary' : '' %>  " href="/categories">
                 <span class="nav-link-text ms-1">Categorias</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-dark " href="/roles">
+              <a class="nav-link text-dark <%= controller_name == 'roles' ? 'active bg-gradient-primary' : '' %>  " href="/roles">
                 <span class="nav-link-text ms-1">Roles</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-dark " href="/posts">
+              <a class="nav-link text-dark <%= controller_name == 'posts' ? 'active bg-gradient-primary' : '' %>  " href="/posts">
                 <span class="nav-link-text ms-1">Posts</span>
               </a>
             </li>
             <li class="nav-item container">
-              <% if user_signed_in? %>
-                <div class="text-rose">
-                  Logado: <strong><%= current_user.email %></strong>.
-                </div>
+              <div class="text-rose">
+                Logado: <strong><%= current_user.email %></strong>.
+              </div>
+              <li class="nav-item container">
+                  <%= link_to 'Editar perfil', edit_user_registration_path, :class => 'btn btn-outline-primary text-rose navbar-link' %>
+              </li>
                 <li class="nav-item container">
-                    <%= link_to 'Editar perfil', edit_user_registration_path, :class => 'btn btn-outline-primary text-rose navbar-link' %>
-                </li>
-                  <li class="nav-item container">
-                    <%= link_to "Sair", destroy_user_session_path, method: :delete, :class => 'btn btn-outline-primary text-rose navbar-link'  %>
-                </li>
-              <% end %>
+                  <%= link_to "Sair", destroy_user_session_path, method: :delete, :class => 'btn btn-outline-primary text-rose navbar-link'  %>
+              </li>
             </li>
           </ul>
         </div>
