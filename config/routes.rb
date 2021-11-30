@@ -5,5 +5,8 @@ Rails.application.routes.draw do
   resources :categories
   resources :roles
   resources :posts
+
   devise_for :users, controllers: { sessions: 'users/sessions', registrations: 'users/registrations' }
+
+  get '/post/:id', to: 'home#post', as: 'home_post'
 end

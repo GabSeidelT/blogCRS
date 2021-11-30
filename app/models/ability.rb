@@ -20,8 +20,6 @@ class Ability
         can [:read, :update, :destroy], User
         can :show, Post
       end
-    else
-      can :show, Post
     end
       
   end

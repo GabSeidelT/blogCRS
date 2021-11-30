@@ -37,7 +37,7 @@
                       <div class="d-flex justify-content-between align-items-center">
                         <small class="text-muted fixd-bottom"><%= post.created_at %></small>
                         <div class="card-footer" :last-child>
-                          <%= link_to "Ver", post_path(id: post.id), :class => 'btn btn-sm text-dark btn-outline-secondary' %>
+                          <%= link_to "Ver", home_post_path(id: post.id), :class => 'btn btn-sm text-dark btn-outline-secondary' %>
                         </div>
                       </div>
                     </div>
