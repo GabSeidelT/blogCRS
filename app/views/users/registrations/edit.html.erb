@@ -1,4 +1,4 @@
-<div class="fill">
+<div class="fill mt-8">
   <div class="container p-0 bg-gradient-light border-radius-lg">
       <div class="card card-plain">
         <div class="card-header">
@@ -9,37 +9,32 @@
             <%= render "users/shared/error_messages", resource: resource %>
 
 
-            <div class="input-group input-group-outline mb-3">
-              <p class="text-rose m-2 font-weight-bold">  Email : </p>
-              <label class="form-label"></label>
-              <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+            <div class="input-group input-group-outline mb-3 focused is-focused" >
+              <label class="form-label">Email</label>
+              <%= f.email_field :email,class:"form-control", autocomplete: "email" %>
             </div>
 
             <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
               <div>Atualmente esperando confirmação para: <%= resource.unconfirmed_email %></div>
             <% end %>
 
-            <div class="input-group input-group-outline mb-3">
-              <p class="text-rose m-2 font-weight-bold">  Senha : </p>
-              <label class="form-label"></label>
-              <%= f.password_field :password, autocomplete: "new-password" %>
-              <% if @minimum_password_length %>
-                <em class="text-dark m-2 font-weight-bold">(<%= @minimum_password_length %> caracteres apenas) </em>
-              <% end %><br />
+            <div class="input-group input-group-outline mb-3 focused is-focused" >
+              <label class="form-label">Senha 
+                <% if @minimum_password_length %>
+                  (<%= @minimum_password_length %> caracteres apenas)
+                <% end %>
+              </label>
+              <%= f.password_field :password,class:"form-control", autocomplete: "new-password" %>
             </div>
 
-            <div class="input-group input-group-outline mb-3">
-              <p class="text-rose m-2 font-weight-bold">  Confirmar senha : </p>
-              <label class="form-label"></label>
-              <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-              <i class="text-dark m-2 font-weight-bold"> (Deixe vazio se não deseja alterar)  </i>
+            <div class="input-group input-group-outline mb-3 focused is-focused" >
+              <label class="form-label">Confirmar Senha< (Deixe vazio se não deseja alterar)</label>
+              <%= f.password_field :password_confirmation,class:"form-control", autocomplete: "new-password" %>
             </div>
 
-            <div class="input-group input-group-outline mb-3">
-              <p class="text-rose m-2 font-weight-bold">  Senha atual : </p>
-              <label class="form-label"></label>
-              <%= f.password_field :current_password, autocomplete: "current-password" %>
-                <i class="text-dark m-2 font-weight-bold"> (Necessário para confirmar alterações)  </i>
+            <div class="input-group input-group-outline mb-3 focused is-focused" >
+              <label class="form-label">Senha Atual (Necessário para confirmar alterações)</label>
+              <%= f.password_field :current_password,class:"form-control" %>
             </div>
 
             <div class="actions">
@@ -49,7 +44,8 @@
           <div class="input-group input-group-outline mb-3">
               <h3 class="text-rose m-2 font-weight-bold">  Cancelar minha conta </h3><br />
               <div class="input-group mb-3">
-                <p class="text-rose m-2 font-weight-bold">Infeliz? <%= button_to "Cancelar minha conta", registration_path(resource_name), data: { confirm: "Tem certeza?" }, method: :delete %></p>
+                <p class="text-rose m-2 font-weight-bold">Infeliz? </p>
+                <%= button_to "Cancelar minha conta", registration_path(resource_name),class:"btn btn-md btn-outline-primary text-rose btn-lg w-100 mt-4 mb-0" , data: { confirm: "Tem certeza?" }, method: :delete %>
               </div>
           </div>
 

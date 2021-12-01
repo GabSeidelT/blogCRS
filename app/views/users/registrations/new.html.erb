@@ -1,38 +1,47 @@
-<div class="fill">
-  <div class="container p-0 bg-gradient-light border-radius-lg">
-    <div class="card card-plain">
-        <div class="card-header">
-            <h4 class="font-weight-bolder">Cadastrar</h4>
+<div class="page-header min-vh-100">
+  <div class="container">
+    <div class="row">
+      <div class="col-6 d-lg-flex d-none h-100 my-auto pe-0 position-absolute top-0 start-0 text-center justify-content-center flex-column">
+        <div class="position-relative bg-gradient-primary h-100 m-3 px-7 border-radius-lg d-flex flex-column justify-content-center" style="background-image: url('../assets/img/illustrations/illustration-signup.jpg'); background-size: cover;">
         </div>
-        <div class="card-body">
-          <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-            <%= render "users/shared/error_messages", resource: resource %>
-
-           <div class="input-group input-group-outline mb-3">
-              <p class="text-rose m-2 font-weight-bold">  Email : </p>
-              <label class="form-label"></label>
-              <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-            </div>
-            <div class="input-group input-group-outline mb-3">
-              <p class="text-rose m-2 font-weight-bold">  Senha : </p>
-              <label class="form-label"></label>
-              <% if @minimum_password_length %>
-                <em>(<%= @minimum_password_length %> caracteres apenas)</em>
-              <% end %><br />
-              <%= f.password_field :password, autocomplete: "new-password" %>
-            </div>
-            <div class="input-group input-group-outline mb-3">
-              <p class="text-rose m-2 font-weight-bold">  Confirmar senha : </p>
-              <label class="form-label"></label>
-              <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-            </div>
-
-            <div class="actions">
-              <%= f.submit "Confirmar", class: "btn btn-lg bg-gradient-primary btn-lg w-100 mt-4 mb-0" %>            
-            </div>
-          <% end %>
-
-          <%= render "users/shared/links" %>
+      </div>
+      <div class="col-xl-4 col-lg-5 col-md-7 d-flex flex-column ms-auto me-auto ms-lg-auto me-lg-5">
+        <div class="card card-plain bg-white text-black">
+          <div class="card-header">
+            <h4 class="font-weight-bolder ">Cadastro</h4>
+            <p class="mb-0">Insira e-mail e senha para cadastrar-se</p>
+            <p class="mb-0"><%= render "users/shared/error_messages", resource: resource %></p>
+          </div>
+          <div class="card-body">
+              <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+                <div class="input-group input-group-outline mb-3 focused is-focused" >
+                  <label class="form-label">Email</label>
+                  <%= f.email_field :email,class:"form-control", autocomplete: "email" %>
+                </div>
+                <div class="input-group input-group-outline mb-3 focused is-focused">
+                  <label class="form-label">Senha<% if @minimum_password_length %>
+                      <em>(<%= @minimum_password_length %> caracteres apenas)</em>
+                      <% end %>
+                  </label>
+                  <%= f.password_field :password,class:"form-control", autocomplete: "new-password" %>
+                  <br />
+                </div>
+                <div class="input-group input-group-outline mb-3 focused is-focused">
+                  <label class="form-label">Confirmar Senha</label>
+                  <%= f.password_field :password_confirmation,class:"form-control", autocomplete: "new-password" %>
+                </div>
+                <div class="actions text-center">
+                  <%= f.submit "Confirmar", class: "btn btn-lg bg-gradient-primary btn-lg w-100 mt-4 mb-0" %>            
+                </div>
+              <% end %>
+            </form>
+          <div class="card-footer text-center pt-0 px-lg-2 px-1">
+            <p class="mb-2 text-sm mx-auto">
+              <%= render "users/shared/links" %>
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

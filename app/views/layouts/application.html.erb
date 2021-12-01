@@ -70,28 +70,20 @@
           </div>
         </nav>
     </header> 
-    <div class="mt-7 mx-4">
+    <div class="mx-4">
       <% if notice %>
-        <div class="alert alert-primary alert-dismissible text-white" role="alert">
+        <div class="alert alert-primary alert-dismissible text-white mt-7" role="alert">
           <span class="text-sm"> <%= notice %> </span>
-          <button type="button" class="btn-close text-lg py-3 opacity-10" data-bs-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
         </div>
       <% end %>
       <% if alert %>
-        <div class="alert alert-danger alert-dismissible text-white" role="alert">
+        <div class="alert alert-danger alert-dismissible text-white mt-7" role="alert">
           <span class="text-sm"> <%= alert %> </span>
-          <button type="button" class="btn-close text-lg py-3 opacity-10" data-bs-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
         </div>
       <% end %>
     </div>
     <div class=" fill">
-      <div class="mt-8">
         <%= yield %>
-      </div>
     </div>
     <footer class="align-bottom text-dark bg-gradient-light border-top border-primary">
       <!-- FOOTER CONTENT -->
