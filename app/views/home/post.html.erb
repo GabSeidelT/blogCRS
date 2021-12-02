@@ -19,4 +19,30 @@
             </div>
         </div>
     </div>
+    <table class="table bg-gradient-light border-radius-lg align-items-center mb-8">
+        <% if user_signed_in?%>
+            <thead>
+                <%= form_with model: @comments do |form| %>
+                    <tr>
+                        <th class="text-uppercase text-secondary font-weight-bolder opacity-7">
+                            <%= form.text_area :content, maxlength: 255, class: "bg-light form-control"%>
+                            <%= form.submit 'Salvar', class: "btn btn-lg bg-gradient-primary btn-lg mt-4 mb-0" %>
+                        </th>
+                    </tr>
+                <% end %>
+            </thead>
+        <% end %>
+        <tbody>
+            <% @comments.each do |comment| %>
+                <tr class="container">
+                <td>
+                    <p class="font-weight-bold mb-0"><%= comment.content %></p>
+                </td>
+                <td>
+                    <p class="font-weight-bold mb-0"><%= comment.created_at %></p>
+                </td>
+                </tr>
+            <% end %>
+        </tbody>
+    </table>
 </div>
