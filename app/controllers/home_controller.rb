@@ -6,6 +6,7 @@ class HomeController < ApplicationController
 
     def post
         @post = Post.find(params[:id])
-        @comment = Comment.order(:created_at)
+        @comments = Comment.order(:created_at).where(:post_id == @post.id)
+        @comment = Comment.new
     end
 end
