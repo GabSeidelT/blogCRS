@@ -23,8 +23,8 @@
             <%= render partial: 'form' %>
     <% end %>
     <table class="table bg-gradient-light border-radius-lg mt-2 align-items-center mb-8">
-        <tbody>
-            <%= render partial: 'comments' %>
+        <tbody id="comment-list">
+            <%= render 'comments', comments: @comments %>
         </tbody>
     </table>
 </div>

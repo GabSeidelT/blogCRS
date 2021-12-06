@@ -16,8 +16,12 @@ class CommentsController < ApplicationController
             @comment = Comment.new(comment_params)
             get_params
             @comment.user_id = current_user.id
-        
+            
             if @comment.save
+                @comments = Comment.order(:created_at)
+                respond_to do |format|
+                    format.js
+                end
             else
                 render :new, status: :unprocessable_entity
             end
@@ -29,7 +33,7 @@ class CommentsController < ApplicationController
             if @comment.present?
                 @comment.destroy 
             end
-            redirect_to _path
+            redirect_to comments_path
         end
         
         private
@@ -39,7 +43,7 @@ class CommentsController < ApplicationController
         end
 
         def comment_params
-            params.require(:comment).permit(:content, :user_id, :post_id)
+            params.require(:comment).permit(:content, :post_id, :comment_id)
         end
     
 end

@@ -1,6 +1,6 @@
 <% if can? :create, Comment %>
     <div class="bg-gradient-light border-radius-lg">
-        <%= form_with model: @comment do |form| %>
+        <%= form_with model: @comment, local: false do |form| %>
                 <div class="text-uppercase text-secondary font-weight-bolder opacity-7">
                     <%= form.text_area :content, maxlength: 255, class: "bg-light form-control"%>
                     <%= form.submit 'Salvar', class: "btn btn-lg bg-gradient-primary btn-lg m-2" %>

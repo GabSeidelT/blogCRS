@@ -1,10 +1,13 @@
-<% @comments.each do |comment| %>
+<% comments.each do |comment| %>
     <tr class="container">
-    <td>
-        <p class="font-weight-bold mb-0"><%= comment.content %></p>
-    </td>
-    <td>
-        <p class="font-weight-bold mb-0"><%= comment.created_at %></p>
-    </td>
+        <td>
+            <p class="font-weight-bold mb-0"><%= comment.content %></p>
+        </td>
+        <td>
+            <p class="font-weight-bold mb-0"><%= comment.created_at %></p>
+        </td>
+    </tr>
+    <tr class="container">
+        <%# <%= render 'form', comment: @comment %> 
     </tr>
 <% end %>
