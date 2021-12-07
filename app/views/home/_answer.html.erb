@@ -1,14 +1,14 @@
 <% if can? :create, Comment %>
     <td>
-        <%= form_with model: @comment, local: false do |form| %>
+        <%= form_with model: @comment, local: false, :html => {:id =>'comment-form' } do |form| %>
             <div class="bg-gradient-light border-radius-lg"  id="comment-list">
                 <td class="text-uppercase text-secondary font-weight-bolder opacity-7">
                     <%= form.text_area :content, maxlength: 255, class: "bg-light form-control"%>
                     <%= form.hidden_field :post_id, :value => @post.id %>
-                    <%= form.hidden_field :comment_id, :value => @comment.id %>
+                    <%= form.hidden_field :comment_id, :value => comment %>
                 </td>
                 <td class="text-uppercase text-secondary font-weight-bolder opacity-7">
-                    <%= form.submit 'Salvar', class: "btn btn-lg bg-gradient-primary btn-lg m-2" %>
+                    <%= form.submit 'Responder', class: "btn btn-lg bg-gradient-primary btn-lg m-2" %>
                 </td>
             </div>
         <% end %>
