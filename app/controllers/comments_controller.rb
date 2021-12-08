@@ -16,11 +16,13 @@ class CommentsController < ApplicationController
             @comment = Comment.new(comment_params)
             get_params
             @comment.user_id = current_user.id
+            @comment_son = Comment.new
+
             
             if @comment.save
-                @comments = Comment.order(:created_at)
                 respond_to do |format|
                     format.js
+                    @comments = Comment.where(post_id: @comment.post_id).where(comment_id: nil).order(created_at: :desc)
                 end
             else
                 render :new, status: :unprocessable_entity

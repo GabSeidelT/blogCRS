@@ -1,16 +1,42 @@
 <% comments.each do |comment| %>
-        <tr class="container">
-            <td>
-                <p class="font-weight-bold mb-0"><%= comment.user_id %></p>
-            </td>
-            <td>
-                <p class="font-weight-bold mb-0"><%= comment.content %></p>
-            </td>
-            <td>
-                <p class="font-weight-bold mb-0"><%= comment.created_at %></p>
-            </td>
-        </tr>
-        <tr class="container">
-            <%# <%= render 'form', comment: @comment %> 
-        </tr>
+
+    <table class="table bg-light border-radius-lg mt-5 align-items-center">
+        <tbody id="comment-list">
+            <tr class="container" style="font-size: 18px;">
+                <td>
+                    <p class="font-weight-bold mb-0"><%= comment.user.email %> : </p>
+                </td>
+                <td>
+                    <p class="font-weight-bold mb-0"><%= comment.content %></p>
+                </td>
+                <td>
+                    <p class="font-weight-bold mb-0">-<%= comment.created_at %></p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <% if can? :create, Comment %>
+        <%= form_with model: @comment_son, local: false, :html => {:id => 'comment-form'}  do |f| %>
+            <div class="bg-white border-radius-lg mb-2">
+                <%= f.hidden_field :post_id, value: comment.post_id %>
+                <%= f.hidden_field :comment_id, value: comment.id %>
+                <%= f.text_area :content, maxlength: 255, class: "bg-light form-control"%>
+                <%= f.submit 'Salvar', class:'btn btn-primary' %>
+            </div>
+        <% end %>
+    <% end %>
+    <table class="table bg-gradient-light border-radius-lg align-items-center">
+        <tbody id="comment-list">
+            <% comment.comments.each do |son|%>
+                <tr>
+                    <td>
+                        <%= son.user.email %>
+                    </td>
+                    <td>
+                        <%= son.content %>
+                    </td>
+                </tr>   
+            <% end %>
+        </tbody>
+    </table>
 <% end %>

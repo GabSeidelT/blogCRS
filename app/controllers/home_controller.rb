@@ -7,7 +7,8 @@ class HomeController < ApplicationController
     def post
         @post = Post.find(params[:id])
         @user = User.find(params[:id])
-        @comments = Comment.where(post_id: comment.post_id)
         @comment = Comment.new
+        @comment_son = Comment.new
+        @comments = Comment.where(post_id: @post.id).where(comment_id: nil).order(created_at: :desc)
     end
 end

@@ -1,16 +1,10 @@
-<% if can? :create, Comment %>
+<%= form_with model: @comment_son, local: false, :html => {:id => 'comment-form'}  do |f| %>
+    <td class="bg-white border-radius-sm">
+        <%= f.hidden_field :post_id, value: @comment.post_id %>
+        <%= f.hidden_field :comment_id, value: @comment.id %>
+        <%= f.text_area :content, maxlength: 255, class: "bg-light form-control"%>
+    </td>
     <td>
-        <%= form_with model: @comment, local: false, :html => {:id =>'comment-form' } do |form| %>
-            <div class="bg-gradient-light border-radius-lg"  id="comment-list">
-                <td class="text-uppercase text-secondary font-weight-bolder opacity-7">
-                    <%= form.text_area :content, maxlength: 255, class: "bg-light form-control"%>
-                    <%= form.hidden_field :post_id, :value => @post.id %>
-                    <%= form.hidden_field :comment_id, :value => comment %>
-                </td>
-                <td class="text-uppercase text-secondary font-weight-bolder opacity-7">
-                    <%= form.submit 'Responder', class: "btn btn-lg bg-gradient-primary btn-lg m-2" %>
-                </td>
-            </div>
-        <% end %>
+        <%= f.submit 'Salvar', class:'btn btn-primary' %>
     </td>
 <% end %>
