@@ -6,8 +6,10 @@ Rails.application.routes.draw do
   resources :roles
   resources :posts
   resources :comments
-
+  
   devise_for :users, controllers: { sessions: 'users/sessions', registrations: 'users/registrations' }
+  resources :users
+  
   devise_for :readers, controllers: { confirmations: 'readers/confirmations', omniauth: 'readers/omniauth', passwords: 'readers/passwords', resgistrations: 'readers/registrations', sessions: 'readers/sessions', unlocks: 'readers/unlocks' }
 
   get '/signup', to: 'readers#new', as: 'readers_new'

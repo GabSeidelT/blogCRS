@@ -38,6 +38,9 @@
               <% if can? :manage, Comment %>
                 <%= link_to 'Comment', comments_path, class: "text-rose btn btn btn-outline-primary font-weight-bold text-xs m-2" %>
               <% end %>
+              <% if can? :manage, User %>
+                <%= link_to 'User', users_path, class: "text-rose btn btn btn-outline-primary font-weight-bold text-xs m-2" %>
+              <% end %>
             <% end %>
           <!-- SEARCH BAR -->
             <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">

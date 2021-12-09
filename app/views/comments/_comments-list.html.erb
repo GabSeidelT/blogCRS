@@ -1,0 +1,10 @@
+<% comments.each do |comment| %>
+    <tr class="container">
+        <td>
+           <p class="font-weight-bold mb-0"><%= comment.content %></p>
+        </td>
+        <td class="align-middle">
+            <%= link_to 'Deletar', comment_path(id: comment.id), method: :delete, data: { confirm: "Tem certeza?" }, class: "btn btn-sm text-white bg-primary font-weight-bold" %>
+        </td>
+    </tr>
+<% end %>

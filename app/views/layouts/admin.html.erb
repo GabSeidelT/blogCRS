@@ -52,6 +52,11 @@
                 <span class="nav-link-text ms-1">Comments</span>
               </a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link text-dark <%= controller_name == 'users' ? 'active bg-gradient-primary' : '' %>  " href="/users">
+                <span class="nav-link-text ms-1">Users</span>
+              </a>
+            </li>
             <li class="nav-item container">
               <div class="text-rose">
                 Logado: <strong><%= current_user.email %></strong>.
