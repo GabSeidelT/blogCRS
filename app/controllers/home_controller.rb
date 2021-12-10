@@ -6,6 +6,7 @@ class HomeController < ApplicationController
 
     def post
         @post = Post.find(params[:id])
+        @rating = Rating.new
         @user = User.find(params[:id])
         @comment = Comment.new
         @comment_son = Comment.new

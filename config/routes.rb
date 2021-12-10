@@ -10,8 +10,6 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { sessions: 'users/sessions', registrations: 'users/registrations' }
   resources :users
   
-  devise_for :readers, controllers: { confirmations: 'readers/confirmations', omniauth: 'readers/omniauth', passwords: 'readers/passwords', resgistrations: 'readers/registrations', sessions: 'readers/sessions', unlocks: 'readers/unlocks' }
-
-  get '/signup', to: 'readers#new', as: 'readers_new'
+  post '/create/user', to: 'users#create', as: 'user_create'
   get '/post/:id', to: 'home#post', as: 'home_post'
 end

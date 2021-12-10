@@ -19,6 +19,9 @@
             </div>
         </div>
     </div>
+    <% if user_signed_in?%>
+            <%= render partial: 'rate', rating: @ratings %>
+    <% end %>
     <h2 class="text-light">Comentários</h2>
     <% if user_signed_in?%>
             <%= render partial: 'form' %>

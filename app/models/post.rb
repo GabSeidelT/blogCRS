@@ -3,6 +3,7 @@ class Post < ApplicationRecord
   has_one_attached :image
   has_many :post_cats, dependent: :delete_all
   has_many :comments, dependent: :delete_all
+  has_many :ratings
 
 
   validates_presence_of :name

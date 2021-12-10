@@ -1,13 +1,13 @@
 <div class="card-body bg-gradient-light border-radius-lg container ml-8">
-    <%= form_with model: @user do |form| %>
-        <div class="input-group input-group-outline mb-3">
+    <%= form_for @user, url: user_create_path, method: :post do |form| %>
+            <div class="input-group input-group-outline mb-3">
             <p class="text-rose m-2 font-weight-bold">  Novo Usuário </p>
             <label class="form-label"></label>
         </div>
         <div class="input-group input-group-outline mb-3">
             <p class="text-rose m-2 font-weight-bold">  Email : </p>
             <label class="form-label"></label>
-            <%= form.text_field :email, maxlength: 16, class: "bg-light form-control"%>
+            <%= form.text_field :email, class: "bg-light form-control"%>
         </div>
         <div class="input-group input-group-outline mb-3">
             <p class="text-rose m-2 font-weight-bold">  Senha : </p>
@@ -15,12 +15,9 @@
             <%= form.text_area :password, maxlength: 6, class: "bg-light form-control" %>
         </div>
         <div class="input-group input-group-outline mb-3">
-            <% @roles.each do |role| %>
-                    <li>
-                        <%= check_box_tag 'role_ids[]', role.id, @user.filter { |a| a.role_id == role.id }.present? -%>
-                        <%= h role.username -%>
-                    </li>
-            <% end %>   
+            <li>
+                <%= form.select(:role_id, @roles.collect {|role| [role.username, role.id]}, class: "bg-light form-control", prompt: 'Cargo') %>
+            </li>
         </div>
         <div class="text-center">
             <%= form.submit 'Salvar', class: "btn btn-lg bg-gradient-primary btn-lg w-100 mt-4 mb-0" %>
