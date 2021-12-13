@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :categories
   resources :roles
   resources :posts
+  resources :ratings
   resources :comments
   
   devise_for :users, controllers: { sessions: 'users/sessions', registrations: 'users/registrations' }

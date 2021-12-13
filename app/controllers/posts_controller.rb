@@ -5,7 +5,10 @@ class PostsController < ApplicationController
 
     def index
         @posts = Post.order(:name)
+        @post = Post.order(:name)
         @users = User.order(:email)
+        @ratings = Rating.order(created_at: :desc)
+        @average = Rating.where(post_id: Post.id).average('rate')
     end
 
     def new

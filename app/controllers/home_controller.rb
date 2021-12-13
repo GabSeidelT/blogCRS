@@ -7,6 +7,8 @@ class HomeController < ApplicationController
     def post
         @post = Post.find(params[:id])
         @rating = Rating.new
+        @ratings = Rating.order(created_at: :desc)
+        @average = Rating.where(post_id: @post.id).average('rate')
         @user = User.find(params[:id])
         @comment = Comment.new
         @comment_son = Comment.new

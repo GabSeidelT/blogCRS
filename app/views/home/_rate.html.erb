@@ -1,9 +1,49 @@
 <h3 class="text-light font-weight-bold"> Avaliar </h3>
-<%= form_with model: @ratings do |f| %>
+<%= form_with model: @rating, local: false, :html => {:id => 'rate-form'} do |f| %>
     <% (1..5).each do |rating| %>
-        <%= radio_button_tag "rate", rating %>
-        <i class="fas fa-star"></i>
+        <%= f.label :rate, for: "rating_rate_#{rating.to_i}" do %>
+            <i id="<%=rating%>" class="fas fa-star fa-2x"></i>
+        <% end %>
+        <%= f.radio_button :rate, rating.to_i, class: "display-0", :html => {:id => 'rate-form'} %>
     <% end %>
     <%= f.hidden_field :post_id, value: @post.id %>
     <%= f.submit('Rate') %> 
 <% end %>
+<%= @average.number_with_precision(@average, precision: 2) %>
+<script>
+    $('#1').click(function(){
+        $('#1').css("color", "#e91e63");
+        $('#2').css("color", "gray");
+        $('#3').css("color", "gray");
+        $('#4').css("color", "gray");
+        $('#5').css("color", "gray");
+    })
+    $('#2').click(function(){
+        $('#1').css("color", "#e91e63");
+        $('#2').css("color", "#e91e63");
+        $('#3').css("color", "gray");
+        $('#4').css("color", "gray");
+        $('#5').css("color", "gray");
+    })
+    $('#3').click(function(){
+        $('#1').css("color", "#e91e63");
+        $('#2').css("color", "#e91e63");
+        $('#3').css("color", "#e91e63");
+        $('#4').css("color", "gray");
+        $('#5').css("color", "gray");
+    })
+    $('#4').click(function(){
+        $('#1').css("color", "#e91e63");
+        $('#2').css("color", "#e91e63");
+        $('#3').css("color", "#e91e63");
+        $('#4').css("color", "#e91e63");
+        $('#5').css("color", "gray");
+    })
+    $('#5').click(function(){
+        $('#1').css("color", "#e91e63");
+        $('#2').css("color", "#e91e63");
+        $('#3').css("color", "#e91e63");
+        $('#4').css("color", "#e91e63");
+        $('#5').css("color", "#e91e63");
+    })
+</script>

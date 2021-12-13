@@ -9,9 +9,6 @@ class RatingsController < ApplicationController
         @rating.user_id = current_user.id
 
         if @rating.save
-            respond_to do |format|
-                format.js
-            end
         end
     end
 

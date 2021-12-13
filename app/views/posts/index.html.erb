@@ -37,6 +37,9 @@
                           <%= image_tag post.image.variant(resize_to_limit: [258, 170]) %>
                         </td>
                         <td>
+                          <%= @average.to_i %>
+                        </td>
+                        <td>
                           <p class="font-weight-bold mb-0"><%= post.created_at %></p>
                         </td>
                         <td class="align-middle">
