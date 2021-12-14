@@ -34,13 +34,13 @@
                           <p class="font-weight-bold mb-0"><%= post.summary %></p>
                         </td>
                         <td>
+                          <%= number_with_precision(post.media, precision: 3) %>
+                        </td>
+                        <td>
                           <%= image_tag post.image.variant(resize_to_limit: [258, 170]) %>
                         </td>
                         <td>
-                          <%= @average.to_i %>
-                        </td>
-                        <td>
-                          <p class="font-weight-bold mb-0"><%= post.created_at %></p>
+                          <p class="font-weight-bold mb-0"><%= post.created_at.strftime('%d/%m/%Y ás %H:%M') %></p>
                         </td>
                         <td class="align-middle">
                           <%= link_to 'Editar', edit_post_path(id: post.id), class: "btn btn-sm text-secondary font-weight-bold" %>
