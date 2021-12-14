@@ -7,37 +7,39 @@
         <%= f.radio_button :rate, rating.to_i, class: "display-0", :html => {:id => 'rate-form'} %>
     <% end %>
     <%= f.hidden_field :post_id, value: @post.id %>
-    <%= f.submit('Rate') %> 
+    <%= f.submit ('Avaliar'), :class => 'btn btn-sm text-dark btn-outline-secondary' %> 
 <% end %>
-<%= @average.number_with_precision(@average, precision: 2) %>
+<span id="rating-post">
+    <%= number_with_precision(@average, precision: 1) %>
+</span>
 <script>
     $('#1').click(function(){
         $('#1').css("color", "#e91e63");
-        $('#2').css("color", "gray");
-        $('#3').css("color", "gray");
-        $('#4').css("color", "gray");
-        $('#5').css("color", "gray");
+        $('#2').css("color", "white");
+        $('#3').css("color", "white");
+        $('#4').css("color", "white");
+        $('#5').css("color", "white");
     })
     $('#2').click(function(){
         $('#1').css("color", "#e91e63");
         $('#2').css("color", "#e91e63");
-        $('#3').css("color", "gray");
-        $('#4').css("color", "gray");
-        $('#5').css("color", "gray");
+        $('#3').css("color", "white");
+        $('#4').css("color", "white");
+        $('#5').css("color", "white");
     })
     $('#3').click(function(){
         $('#1').css("color", "#e91e63");
         $('#2').css("color", "#e91e63");
         $('#3').css("color", "#e91e63");
-        $('#4').css("color", "gray");
-        $('#5').css("color", "gray");
+        $('#4').css("color", "white");
+        $('#5').css("color", "white");
     })
     $('#4').click(function(){
         $('#1').css("color", "#e91e63");
         $('#2').css("color", "#e91e63");
         $('#3').css("color", "#e91e63");
         $('#4').css("color", "#e91e63");
-        $('#5').css("color", "gray");
+        $('#5').css("color", "white");
     })
     $('#5').click(function(){
         $('#1').css("color", "#e91e63");
