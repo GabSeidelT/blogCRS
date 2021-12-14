@@ -5,11 +5,16 @@ class RatingsController < ApplicationController
     end
     
     def create
-        @rating = Rating.new(rating_params)
-        @rating.user_id = current_user.id
-
-        if @rating.save
+        @rating = Rating.where(user_id: current_user.id, post_id: params[:rating][:post_id]).first
+        if @rating.present?
+            @rating.update(rating_params)
+        else
+            @rating = Rating.new(rating_params)
+            @rating.user_id = current_user.id
+            @rating.save
+            
         end
+        @average = Rating.where(post_id: @rating.post_id).average('rate')
     end
 
     def edit
