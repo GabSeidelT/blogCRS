@@ -7,7 +7,7 @@
         <%= f.radio_button :rate, rating.to_i, class: "display-0", :html => {:id => 'rate-form'} %>
     <% end %>
     <%= f.hidden_field :post_id, value: @post.id %>
-    <%= f.submit ('Avaliar'), :class => 'btn btn-sm text-dark btn-outline-secondary' %> 
+    <%= f.submit ('Avaliar'), :class => 'btn btn-sm text-rose bg-white btn-outline-primary' %> 
 <% end %>
 <span id="rating-post">
     <%= number_with_precision(@average, precision: 1) %>

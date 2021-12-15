@@ -3,14 +3,14 @@
     <table class="table bg-light border-radius-lg mt-5 align-items-center">
         <tbody id="comment-list">
             <tr class="container" style="font-size: 18px;">
-                <td>
+                <td class="bg-gradientlight">
                     <p class="font-weight-bold mb-0"><%= comment.user.email %> : </p>
                 </td>
-                <td>
+                <td class="bg-white">
                     <p class="font-weight-bold mb-0"><%= comment.content %></p>
                 </td>
-                <td>
-                    <p class="font-weight-bold mb-0">-<%= comment.created_at %></p>
+                <td class="bg-gradientlight">
+                    <p class="font-weight-bold mb-0"><%= comment.created_at.strftime('%d/%m/%Y') %></p>
                 </td>
             </tr>
         </tbody>

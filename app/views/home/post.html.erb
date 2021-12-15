@@ -1,8 +1,8 @@
 <div class="container mt-12">
     <div class="card fill mb-3 z-index-2 bg-gradient-light">
         <!-- POST IMG -->
-        <div class="card-header shadow-primary border-radius-lg pe-1 page-header p-0 position-relative mt-n4 mx-8 z-index-2 bg-transparent" style="width:1010px; height:400px;">
-                <%= image_tag @post.image.variant(saver: { quality: 10 }, resize_to_fill: [1010, 400]) %>
+        <div class="responsive-1 shadow-primary border-radius-lg page-header p-0 mt-n4 mx-4 z-index-2 bg-transparent">
+                <%= image_tag @post.image.variant(resize_to_fill:[nil,380], quality: 100, extent: nil) %>
         </div>
         <!-- POST TXT -->
         <div class="card-body container text-dark py-1 px-3">
@@ -14,7 +14,7 @@
             </div>
             <div class="d-flex justify-content-between align-items-center">
                 <div class="card-footer bottom-0" :last-child>
-                    <small class="text-muted"><%= @post.created_at %></small>
+                    <small class="text-muted"><%= @post.created_at.strftime('%d/%m/%Y') %></small>
                 </div>
             </div>
         </div>
