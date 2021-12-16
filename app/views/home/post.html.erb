@@ -1,4 +1,4 @@
-<div class="container mt-12">
+<div class="container mt-9" style="margin-bottom: 10%">
     <div class="card fill mb-3 z-index-2 bg-gradient-light">
         <!-- POST IMG -->
         <div class="responsive-1 shadow-primary border-radius-lg page-header p-0 mt-n4 mx-4 z-index-2 bg-transparent">
@@ -20,9 +20,7 @@
         </div>
     </div>
     <div >
-        <% if user_signed_in?%>
-            <%= render 'rate', rating: @ratings %>
-        <% end %>
+        <%= render 'rate', rating: @ratings %>
     </div>
     <h2 class="text-light">Comentários</h2>
     <% if user_signed_in?%>

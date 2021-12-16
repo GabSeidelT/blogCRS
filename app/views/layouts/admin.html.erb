@@ -10,7 +10,7 @@
 
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'admin', 'data-turbolinks-track': 'reload' %>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!--     Fonts and icons     -->
@@ -19,10 +19,11 @@
     <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
   </head>
 
-  <body class="g-sidenav-show bg-gradient-secondary">
-    <aside style="height: 100%;" class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3 bg-gradient-light bg-white" id="sidenav-main">
+  <body class="g-sidenav-show bg-dark">
+    <aside class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3 bg-gradient-light bg-white" id="sidenav-main">
       <div>
         <div class="sidenav-header">
+          <i class="fas fa-times p-3 cursor-pointer text-rose position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
           <a class="navbar-brand m-0">
             <span class="ms-1 font-weight-bold text-dark">Blog</span>
           </a>
@@ -75,56 +76,29 @@
         </div>
       </div>
     </aside>
-    <div class="nav-item d-xl-none ps-3 d-flex align-items-center m-8">
-      <a href="javascript:;" class="nav-link text-body p-0" id="iconNavbarSidenav">
-        <div class="sidenav-toggler-inner">
-          <i class="fa fa-bars primary"></i>
-        </div>
-      </a>
-    </div>
-    <div class="mt-7 mx-4">
-      <% if notice %>
-        <p class="alert alert-primary text-white"><%= notice %></p>
-      <% end %>
-      <% if alert %>
-          <p class="alert alert-primary text-white"><%= alert %></p>
-      <% end %>
-    </div>
-    <div class=" fill">
-      <div style="container-fluid">
-        <%= yield %>
+    <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
+      <div class="nav-item d-xl-none ps-3 d-flex top-side-right">
+        <a href="javascript:;" class="nav-link text-body p-0" id="iconNavbarSidenav">
+          <div class="sidenav-toggler-inner">
+            <i class="fa fa-bars circle-icon primary"></i>
+          </div>
+        </a>
       </div>
-    </div>
+      <div class="mx-4">
+        <% if notice %>
+          <p class="alert alert-primary text-white"><%= notice %></p>
+        <% end %>
+        <% if alert %>
+            <p class="alert alert-primary text-white"><%= alert %></p>
+        <% end %>
+      </div>
+      <div class=" fill">
+        <div class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
+          <div style="container-fluid mb-2">
+            <%= yield %>
+          </div>
+        </div>
+      </div>
+    </main>
   </body>
-  <%# <script>
-    // Toggle Sidenav
-    const iconNavbarSidenav = document.getElementById('iconNavbarSidenav');
-    const iconSidenav = document.getElementById('iconSidenav');
-    const sidenav = document.getElementById('sidenav-main');
-    let body = document.getElementsByTagName('body')[0];
-    let className = 'g-sidenav-pinned';
-
-    if (iconNavbarSidenav) {
-      iconNavbarSidenav.addEventListener("click", toggleSidenav);
-    }
-
-    if (iconSidenav) {
-      iconSidenav.addEventListener("click", toggleSidenav);
-    }
-
-    function toggleSidenav() {
-      if (body.classList.contains(className)) {
-        body.classList.remove(className);
-        setTimeout(function() {
-          sidenav.classList.remove('bg-white');
-        }, 100);
-        sidenav.classList.remove('bg-transparent');
-
-      } else {
-        body.classList.add(className);
-        sidenav.classList.add('bg-white');
-        sidenav.classList.remove('bg-transparent');
-      }
-      }
-  </script> %>
 </html>
