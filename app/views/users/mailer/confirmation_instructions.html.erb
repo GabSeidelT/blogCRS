@@ -2,10 +2,10 @@
     <div class="container p-0 bg-gradient-light border-radius-lg">
         <div class="card card-plain">
             <div class="card-header">
-                <h4 class="font-weight-bolder">Welcome <%= @email %>!</h4>
+                <h4 class="font-weight-bolder">Bem-Vindo(a) <%= @email %>!</h4>
             </div>
             <div class="card-body">
-                <p class="text-rose m-2 font-weight-bold">You can confirm your account email through the link below:</p>
+                <p class="text-rose m-2 font-weight-bold">Você pode confirmar sua conta no link abaixo:</p>
                 <div class="actions">
                     <%= link_to 'Confirmar', confirmation_url(@resource, confirmation_token: @token), class: "btn btn-lg bg-gradient-primary btn-lg w-100 mt-4 mb-0" %>
                 </div>

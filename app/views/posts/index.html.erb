@@ -44,7 +44,7 @@
                         </td>
                         <td class="align-middle">
                           <%= link_to 'Editar', edit_post_path(id: post.id), class: "btn btn-sm text-secondary font-weight-bold" %>
-                          <%= link_to 'Deletar', post_path(id: post.id), method: :delete, data: { confirm: "Tem certeza?" }, class: "btn btn-sm text-white bg-primary font-weight-bold" %>
+                          <%= button_to 'Deletar', post_path(id: post.id), method: :delete, data: { confirm: "Tem certeza?" }, class: "btn btn-sm text-white bg-primary font-weight-bold" %>
                         </td>
                       </tr>
                     <% end %>

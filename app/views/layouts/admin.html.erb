@@ -8,9 +8,9 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js" type="text/javascript"></script>
 
-
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'admin', 'data-turbolinks-track': 'reload' %>
+    
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!--     Fonts and icons     -->
@@ -37,16 +37,6 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-dark <%= controller_name == 'categories' ? 'active bg-gradient-primary' : '' %>  " href="/categories">
-                <span class="nav-link-text ms-1">Categorias</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-dark <%= controller_name == 'roles' ? 'active bg-gradient-primary' : '' %>  " href="/roles">
-                <span class="nav-link-text ms-1">Roles</span>
-              </a>
-            </li>
-            <li class="nav-item">
               <a class="nav-link text-dark <%= controller_name == 'posts' ? 'active bg-gradient-primary' : '' %>  " href="/posts">
                 <span class="nav-link-text ms-1">Posts</span>
               </a>
@@ -57,8 +47,18 @@
               </a>
             </li>
             <li class="nav-item">
+              <a class="nav-link text-dark <%= controller_name == 'categories' ? 'active bg-gradient-primary' : '' %>  " href="/categories">
+                <span class="nav-link-text ms-1">Categorias</span>
+              </a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link text-dark <%= controller_name == 'users' ? 'active bg-gradient-primary' : '' %>  " href="/users">
                 <span class="nav-link-text ms-1">Users</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-dark <%= controller_name == 'roles' ? 'active bg-gradient-primary' : '' %>  " href="/roles">
+                <span class="nav-link-text ms-1">Roles</span>
               </a>
             </li>
             <li class="nav-item container">
@@ -73,6 +73,12 @@
               </li>
             </li>
           </ul>
+        </div>
+      </div>
+      <div>
+        <div class="container mt-7">
+          <p >Made by Moscow</p>
+          <a class="font-weight-bold text-primary" target="_blank" href="/">Visit the homepage</a>
         </div>
       </div>
     </aside>

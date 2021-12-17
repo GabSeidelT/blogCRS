@@ -2,13 +2,13 @@
   <div class="container p-0 bg-gradient-light border-radius-lg">
       <div class="card card-plain">
           <div class="card-header">
-              <h4 class="font-weight-bolder">Hello <%= @email %>!</h4>
+              <h4 class="font-weight-bolder">Olá <%= @email %>!</h4>
           </div>
           <div class="card-body">
             <% if @resource.try(:unconfirmed_email?) %>
-              <p class="text-rose m-2 font-weight-bold">We're contacting you to notify you that your email is being changed to <%= @resource.unconfirmed_email %>.</p>
+              <p class="text-rose m-2 font-weight-bold">Estamos entrando em contato para informar que seu email está sendo alterado de: <%= @resource.unconfirmed_email %>.</p>
             <% else %>
-              <p class="text-rose m-2 font-weight-bold">We're contacting you to notify you that your email has been changed to <%= @resource.email %>.</p>
+              <p class="text-rose m-2 font-weight-bold">Estamos entrando em contato para informar que seu email foi alterado para: <%= @resource.email %>.</p>
             <% end %>
           </div>
       </div>

@@ -1,6 +1,6 @@
 <% comments.each do |comment| %>
 
-    <table class="table bg-light border-radius-lg mt-5 align-items-center">
+    <table class="table table-responsive d-flex bg-light border-radius-lg mt-5 align-items-center">
         <tbody id="comment-list">
             <tr class="container" style="font-size: 18px;">
                 <td class="bg-gradientlight">
@@ -20,17 +20,17 @@
             <div class="bg-white border-radius-lg mb-2">
                 <%= f.hidden_field :post_id, value: comment.post_id %>
                 <%= f.hidden_field :comment_id, value: comment.id %>
-                <%= f.text_area :content, maxlength: 255, class: "bg-light form-control"%>
-                <%= f.submit 'Salvar', class:'btn btn-primary' %>
+                <%= f.text_area :content, maxlength: 255, class: "bg-light form-control", size: "5x1"%>
+                <%= f.submit 'Responder', class:'btn btn-sm btn-outline-primary mt-1 mx-1' %>
             </div>
         <% end %>
     <% end %>
-    <table class="table bg-gradient-light border-radius-lg align-items-center">
+    <table class="table table-responsive d-flex bg-gradient-light border-radius-lg align-items-center">
         <tbody id="comment-list">
             <% comment.comments.each do |son|%>
                 <tr>
                     <td>
-                        <%= son.user.email %>
+                        <%= son.user.email %>:
                     </td>
                     <td>
                         <%= son.content %>

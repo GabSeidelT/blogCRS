@@ -2,31 +2,31 @@
     <%= form_with model: @post do |form| %>
         <div class="input-group input-group-outline mb-3">
             <p class="text-rose m-2 font-weight-bold">  Usuário : <%= current_user.email %> </p>
-            <label class="form-label"></label-->
+            <label class=""></label-->
         </div>
         <div class="input-group input-group-outline mb-3">
             <p class="text-rose m-2 font-weight-bold">  Imagem : </p>
-            <label class="form-label"></label>
+            <label class=""></label>
             <%= form.file_field :image %>
         </div>
         <div class="input-group input-group-outline mb-3">
             <p class="text-rose m-2 font-weight-bold">  Nome : </p>
-            <label class="form-label"></label>
+            <label class=""></label>
             <%= form.text_field :name, maxlength: 16, class: "bg-light form-control"%>
         </div>
         <div class="input-group input-group-outline mb-3">
             <p class="text-rose m-2 font-weight-bold">  Resumo : </p>
-            <label class="form-label"></label>
+            <label class=""></label>
             <%= form.text_area :summary, maxlength: 255, class: "bg-light form-control", size: "60x10" %>
         </div>
         <div class="input-group input-group-outline mb-3">
             <p class="text-rose m-2 font-weight-bold">  Conteúdo : </p>
-            <label class="form-label"></label>
+            <label class=""></label>
             <%= form.text_area :content, maxlength: 5000, class: "bg-light form-control", size: "60x10" %>
         </div>
         <div class="input-group input-group-outline mb-3">
             <p class="text-rose m-2 font-weight-bold">  Categorias : </p>
-            <label class="form-label"></label>
+            <label class=""></label>
             <ul>
                 <% @categories.each do |category| %>
                     <li>

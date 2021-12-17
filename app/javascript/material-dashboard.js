@@ -619,20 +619,20 @@ function toggleSidenav() {
 
 let referenceButtons = document.querySelector('[data-class]');
 
-window.addEventListener("resize", navbarColorOnResize);
+// window.addEventListener("resize", navbarColorOnResize);
 
-function navbarColorOnResize() {
-  if (window.innerWidth > 1200) {
-    if (referenceButtons.classList.contains('active') && referenceButtons.getAttribute('data-class') === 'bg-transparent') {
-      sidenav.classList.remove('bg-white');
-    } else {
-      sidenav.classList.add('bg-white');
-    }
-  } else {
-    sidenav.classList.add('bg-white');
-    sidenav.classList.remove('bg-transparent');
-  }
-}
+// function navbarColorOnResize() {
+//   if (window.innerWidth > 1200) {
+//     if (referenceButtons.classList.contains('active') && referenceButtons.getAttribute('data-class') === 'bg-transparent') {
+//       sidenav.classList.remove('bg-white');
+//     } else {
+//       sidenav.classList.add('bg-white');
+//     }
+//   } else {
+//     sidenav.classList.add('bg-white');
+//     sidenav.classList.remove('bg-transparent');
+//   }
+// }
 
 // Deactivate sidenav type buttons on resize and small screens
 window.addEventListener("resize", sidenavTypeOnResize);
@@ -807,3 +807,38 @@ function darkMode(el) {
     el.removeAttribute("checked");
   }
 };
+$('#r1').click(function(){
+  $('#r1').css("color", "#e91e63");
+  $('#r2').css("color", "white");
+  $('#r3').css("color", "white");
+  $('#r4').css("color", "white");
+  $('#r5').css("color", "white");
+})
+$('#r2').click(function(){
+  $('#r1').css("color", "#e91e63");
+  $('#r2').css("color", "#e91e63");
+  $('#r3').css("color", "white");
+  $('#r4').css("color", "white");
+  $('#r5').css("color", "white");
+})
+$('#r3').click(function(){
+  $('#r1').css("color", "#e91e63");
+  $('#r2').css("color", "#e91e63");
+  $('#r3').css("color", "#e91e63");
+  $('#r4').css("color", "white");
+  $('#r5').css("color", "white");
+})
+$('#r4').click(function(){
+  $('#r1').css("color", "#e91e63");
+  $('#r2').css("color", "#e91e63");
+  $('#r3').css("color", "#e91e63");
+  $('#r4').css("color", "#e91e63");
+  $('#r5').css("color", "white");
+})
+$('#r5').click(function(){
+  $('#r1').css("color", "#e91e63");
+  $('#r2').css("color", "#e91e63");
+  $('#r3').css("color", "#e91e63");
+  $('#r4').css("color", "#e91e63");
+  $('#r5').css("color", "#e91e63");
+})

@@ -4,7 +4,7 @@ class RolesController < ApplicationController
   layout 'admin'
 
     def index
-        @roles = Role.order(:username)
+        @roles = Role.order(:id)
     end
 
     def new

@@ -1,8 +1,8 @@
 <div class="container mt-9" style="margin-bottom: 10%">
     <div class="card fill mb-3 z-index-2 bg-gradient-light">
         <!-- POST IMG -->
-        <div class="responsive-1 shadow-primary border-radius-lg page-header p-0 mt-n4 mx-4 z-index-2 bg-transparent">
-                <%= image_tag @post.image.variant(resize_to_fill:[nil,380], quality: 100, extent: nil) %>
+        <div class="responsive-1 img-fluid shadow-primary border-radius-lg page-header p-0 mt-n4 mx-4 z-index-2 bg-transparent">
+                <%= image_tag @post.image.variant(resize_to_fill:[1224, 520], quality: 100) %>
         </div>
         <!-- POST TXT -->
         <div class="card-body container text-dark py-1 px-3">

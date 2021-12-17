@@ -2,7 +2,7 @@
     <%= form_with model: @post do |form| %>
         <div class="input-group input-group-outline mb-3">
             <p class="text-rose m-2 font-weight-bold">  Usuário : <%= @post.user.email %> </p>
-            <label class="form-label"></label-->
+            <label class="form-label"></label>
         </div>
         <div class="input-group input-group-outline mb-3">
             <p class="text-rose m-2 font-weight-bold">  Imagem : </p>
@@ -12,7 +12,7 @@
         <div class="input-group input-group-outline mb-3">
             <p class="text-rose m-2 font-weight-bold">  Nome : </p>
             <label class="form-label"></label>
-            <%= form.text_field :name, maxlength: 16, class: "bg-light form-control"%>
+            <%= form.text_area :name, maxlength: 16, class: "bg-light form-control" %>
         </div>
         <div class="input-group input-group-outline mb-3">
             <p class="text-rose m-2 font-weight-bold">  Resumo : </p>
