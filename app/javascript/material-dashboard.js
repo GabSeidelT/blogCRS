@@ -59,13 +59,13 @@ function setAttributes(el, options) {
 }
 
 // adding on inputs attributes for calling the focused and defocused functions
-if (document.querySelectorAll('.input-group').length != 0) {
-  var allInputs = document.querySelectorAll('input.form-control');
-  allInputs.forEach(el => setAttributes(el, {
-    "onfocus": "focused(this)",
-    "onfocusout": "defocused(this)"
-  }));
-}
+// if (document.querySelectorAll('.input-group').length != 0) {
+//   var allInputs = document.querySelectorAll('input.form-control');
+//   allInputs.forEach(el => setAttributes(el, {
+//     "onfocus": "focused(this)",
+//     "onfocusout": "defocused(this)"
+//   }));
+// }
 
 
 // Fixed Plugin
@@ -841,4 +841,15 @@ $('#r5').click(function(){
   $('#r3').css("color", "#e91e63");
   $('#r4').css("color", "#e91e63");
   $('#r5').css("color", "#e91e63");
+})
+
+$( "#pass" ).click(function() {
+  if ($('#pass').is(":checked") == true) {
+      $('#user_password').attr("disabled", false);
+      $('#user_password_confirmation').attr("disabled", false);
+  }
+  else { 
+      $('#user_password').attr("disabled", 'disabled');
+      $('#user_password_confirmation').attr("disabled", 'disabled');
+  }
 })

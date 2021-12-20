@@ -66,10 +66,10 @@
                 Logado: <strong><%= current_user.email %></strong>.
               </div>
               <li class="nav-item container">
-                  <%= link_to 'Editar perfil', edit_user_registration_path, :class => 'btn btn-outline-primary text-rose navbar-link' %>
+                  <%= link_to 'Editar perfil', edit_user_registration_path, :class => 'btn btn-sm btn-outline-primary text-rose navbar-link' %>
               </li>
                 <li class="nav-item container">
-                  <%= link_to "Sair", destroy_user_session_path, method: :delete, :class => 'btn btn-outline-primary text-rose navbar-link'  %>
+                  <%= button_to "Sair", destroy_user_session_path, method: :delete, :class => 'btn btn-sm btn-outline-primary text-rose navbar-link'  %>
               </li>
             </li>
           </ul>
@@ -77,8 +77,8 @@
       </div>
       <div>
         <div class="container mt-7">
-          <p >Made by Moscow</p>
-          <a class="font-weight-bold text-primary" target="_blank" href="/">Visit the homepage</a>
+          <p >Feito por Moscow</p>
+          <a class="font-weight-bold text-primary" target="_blank" href="/">Visitar página inicial</a>
         </div>
       </div>
     </aside>

@@ -1,4 +1,4 @@
-<div class="page-header align-items-start min-vh-100" style="background-image: url('https://images.unsplash.com/photo-1497294815431-9365093b7331?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1950&q=80');">
+<div class="page-header align-items-start min-vh-100" style="background-image: url('../assets/img/bg-pricing.jpg'); background-size: cover;">
   <span class="mask bg-gradient-dark opacity-6"></span>
   <div class="container my-auto">
     <div class="row">
@@ -11,11 +11,11 @@
             </div>
             <div class="card-body">
                 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-                  <div class="input-group input-group-outline mb-3 focused is-focused" >
+                  <div class="input-group input-group-outline mb-3 focused" >
                     <label class="form-label">Email</label>
                     <%= f.email_field :email,class:"form-control", autocomplete: "email" %>
                   </div>
-                  <div class="input-group input-group-outline mb-3 focused is-focused">
+                  <div class="input-group input-group-outline mb-3 focused">
                     <label class="form-label">Senha</label>
                     <%= f.password_field :password,class:"form-control", autocomplete: "new-password" %>
                   </div>

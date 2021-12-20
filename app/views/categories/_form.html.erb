@@ -1,12 +1,12 @@
 <div class="card-body">
     <%= form_with model: @category do |form| %>
-        <div class="input-group input-group-outline mb-3">
-            <p class="text-rose m-2 font-weight-bold">  Nome : </p>
+        <div class="mb-3">
+            <span class="text-rose m-2 font-weight-bold">  Nome : </span>
             <label class="form-label"></label>
             <%= form.text_field :name, maxlength: 16, class: "bg-light form-control" %>
         </div>
-        <div class="input-group input-group-outline mb-3">
-            <p class="text-rose m-2 font-weight-bold">  Descrição : </p>
+        <div class="mb-3">
+            <span class="text-rose m-2 font-weight-bold">  Descrição : </span>
             <label class="form-label"></label>
             <%= form.text_area :description, maxlength: 255, class: "bg-light form-control", size: "60x10" %>
         </div>

@@ -32,16 +32,3 @@
         </div>
     <% end %>
 </div>
-
-<script>
-    $( "#pass" ).click(function() {
-        if ($('#pass').is(":checked") == true) {
-            $('#user_password').attr("disabled", false);
-            $('#user_password_confirmation').attr("disabled", false);
-        }
-        else { 
-            $('#user_password').attr("disabled", 'disabled');
-            $('#user_password_confirmation').attr("disabled", 'disabled');
-        }
-    })
-</script>

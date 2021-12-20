@@ -34,9 +34,9 @@
           <!-- SEARCH BAR -->
             <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
                 <div class="ms-md-auto pe-md-3 d-flex align-items-center">
-                  <div class="input-group input-group-outline focused is-focused">
+                  <div class="input-group input-group-outline focused bg-light border-radius-md">
                     <label class="form-label">Procure aqui</label>
-                    <input type="text" class="form-control" onfocus="focused(this)" onfocusout="defocused(this)">
+                    <input type="text" class="form-control">
                   </div>
                 </div>
           <!-- RIGHT SIDE -->
@@ -47,11 +47,11 @@
                       <div>
                           <% if user_signed_in? %>
                             Logado como: <strong><%= current_user.email %></strong>.
-                            <%= link_to 'Editar perfil', edit_user_registration_path, :class => 'btn btn-outline-primary text-rose navbar-link' %> |
-                            <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'btn btn-outline-primary text-rose navbar-link'  %>
+                            <%= link_to 'Editar perfil', edit_user_registration_path, :class => 'btn btn-sm btn-outline-primary text-rose navbar-link' %> |
+                            <%= link_to "Sair", destroy_user_session_path, method: :delete, :class => 'btn btn-sm btn-outline-primary text-rose navbar-link'  %>
                           <% else %>
-                            <%= link_to "Registrar-se", new_user_registration_path, :class => 'btn btn-outline-primary text-rose navbar-link'  %> |
-                            <%= link_to "Login", new_user_session_path, :class => 'btn btn-outline-primary text-rose navbar-link'  %>
+                            <%= link_to "Registrar-se", new_user_registration_path, :class => 'btn btn-sm btn-outline-primary text-rose navbar-link'  %> |
+                            <%= link_to "Entrar", new_user_session_path, :class => 'btn btn-sm btn-outline-primary text-rose navbar-link'  %>
                           <% end %>
                         </div>
                       </div>
@@ -100,11 +100,11 @@
           <div class="card-body position-relative z-index-1 p-3">
                 <!-- FOOTER BTN RIGHT -->
                   <p class="float-end mb-1 btn-outline-primary">
-                    <a class="font-weight-bold btn btn-outline-primary text-primary" href="#">Back to top</a>
+                    <a class="font-weight-bold btn btn-outline-primary text-primary" href="#">Voltar ao topo</a>
                   </p>
                 <!-- FOOTER TXT LEFT -->
-                  <p class="mb-1">Made by Moscow</p>
-                  <a class="font-weight-bold text-primary" target="_blank" href="/">Visit the homepage</a>
+                  <p class="mb-1">Feito por Moscow</p>
+                  <a class="font-weight-bold text-primary" target="_blank" href="/">Visitar página inicial</a>
           </div>
         </div>
     </footer>
