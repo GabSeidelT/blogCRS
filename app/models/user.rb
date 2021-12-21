@@ -16,8 +16,5 @@ class User < ApplicationRecord
   def comment?
     role_id == 2
   end
-  def regular?
-    role_id == 3
-  end
   
 end

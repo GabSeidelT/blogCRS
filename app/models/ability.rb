@@ -12,14 +12,10 @@ class Ability
       
       if user.comment?
         can :show, Post
-        # can :manage, Comment
+        can :create, Comment
         can [:read, :update, :destroy], User
       end
-      
-      if user.regular?
-        can [:read, :update, :destroy], User
-        can :show, Post
-      end
+
     end
       
   end
