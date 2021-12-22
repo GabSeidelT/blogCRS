@@ -9,7 +9,7 @@
               <%= render "users/shared/error_messages", resource: resource %>
               <%= f.hidden_field :reset_password_token %>
 
-              <div class="input-group input-group-outline mb-3">
+              <div class="input-group input-group-outline focused is-focused mb-3">
                   <p class="text-rose m-2 font-weight-bold">  Nova senha : </p>
                   <label class="form-label"></label>
                   <% if @minimum_password_length %>
@@ -18,7 +18,7 @@
                   <%= f.password_field :password, autofocus: true, autocomplete: "new-password" %>
               </div>
 
-              <div class="input-group input-group-outline mb-3">
+              <div class="input-group input-group-outline focused is-focused mb-3">
                   <p class="text-rose m-2 font-weight-bold">  Confirmar nova senha : </p>
                   <label class="form-label"></label>
                   <%= f.password_field :password_confirmation, autocomplete: "new-password" %>

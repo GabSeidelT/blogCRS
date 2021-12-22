@@ -8,7 +8,7 @@
         <%= form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f| %>
           <%= render "users/shared/error_messages", resource: resource %>
 
-          <div class="input-group input-group-outline mb-3">
+          <div class="input-group input-group-outline focused is-focused focused is-focused mb-3">
             <p class="text-rose m-2 font-weight-bold">  Email : </p>
             <label class="form-label"></label>
             <%= f.email_field :email, autofocus: true, autocomplete: "email" %>

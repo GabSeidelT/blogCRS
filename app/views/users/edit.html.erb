@@ -1,20 +1,20 @@
 <div class="card-body bg-gradient-light border-radius-lg container ml-8">
     <%= form_with model: @user do |form| %>
-        <div class="input-group input-group-outline mb-3">
+        <div class="input-group input-group-outline focused is-focused mb-3">
             <p class="text-rose m-2 font-weight-bold">  Usuário : <%= @user.email %> </p>
             <label class="form-label"></label>
         </div>
-        <div class="input-group input-group-outline mb-3">
+        <div class="input-group input-group-outline focused is-focused mb-3">
             <p class="text-rose m-2 font-weight-bold">  Email : </p>
             <label class="form-label"></label>
             <%= form.text_field :email, class: "bg-light form-control"%>
         </div>
-        <div class="input-group input-group-outline mb-3">
+        <div class="input-group input-group-outline focused is-focused mb-3">
             <p class="text-rose m-2 font-weight-bold">  Senha : </p>
             <label class="form-label"></label>
             <%= form.text_area :password, maxlength: 6, disabled: true, class: "bg-light form-control" %>
         </div>
-        <div class="input-group input-group-outline mb-3">
+        <div class="input-group input-group-outline focused is-focused mb-3">
             <p class="text-rose m-2 font-weight-bold">  Confirmar senha : </p>
             <label class="form-label"></label>
             <%= form.text_area :password_confirmation, maxlength: 6, disabled: true, class: "bg-light form-control" %>
@@ -23,7 +23,7 @@
             <input type="checkbox" id="pass" name="pass">
             <label for="pass">alterar senha?</label>
         </div>
-        <div class="input-group input-group-outline mb-3">
+        <div class="input-group input-group-outline focused is-focused mb-3">
             <%= form.select(:role_id, @roles.collect {|role| [role.username, role.id]}, class: "bg-light form-control", prompt: 'select') %>
         </div>
             <div class="text-center">
