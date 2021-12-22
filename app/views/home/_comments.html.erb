@@ -20,7 +20,7 @@
             <div class="bg-white border-radius-lg mb-2">
                 <%= f.hidden_field :post_id, value: comment.post_id %>
                 <%= f.hidden_field :comment_id, value: comment.id %>
-                <%= f.text_area :content, maxlength: 255, class: "bg-light form-control", size: "5x1"%>
+                <%= f.text_area :content, maxlength: 255, required: true, class: "bg-light form-control", size: "5x1"%>
                 <%= f.submit 'Responder', class:'btn btn-sm btn-outline-primary mt-1 mx-1' %>
             </div>
         <% end %>

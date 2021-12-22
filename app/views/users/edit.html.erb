@@ -1,21 +1,21 @@
-<div class="card-body bg-gradient-light border-radius-lg container ml-8">
+<div class="card-body bg-gradient-light border-radius-lg m-4 ml-8">
     <%= form_with model: @user do |form| %>
-        <div class="input-group input-group-outline focused is-focused mb-3">
-            <p class="text-rose m-2 font-weight-bold">  Usuário : <%= @user.email %> </p>
+        <div class="mb-3">
+            <span class="text-rose m-2 font-weight-bold">  Usuário : <%= @user.email %> </span>
             <label class="form-label"></label>
         </div>
-        <div class="input-group input-group-outline focused is-focused mb-3">
-            <p class="text-rose m-2 font-weight-bold">  Email : </p>
+        <div class="mb-3">
+            <span class="text-rose m-2 font-weight-bold">  Email : </span>
             <label class="form-label"></label>
             <%= form.text_field :email, class: "bg-light form-control"%>
         </div>
-        <div class="input-group input-group-outline focused is-focused mb-3">
-            <p class="text-rose m-2 font-weight-bold">  Senha : </p>
+        <div class="mb-3">
+            <span class="text-rose m-2 font-weight-bold">  Senha : </span>
             <label class="form-label"></label>
             <%= form.text_area :password, maxlength: 6, disabled: true, class: "bg-light form-control" %>
         </div>
-        <div class="input-group input-group-outline focused is-focused mb-3">
-            <p class="text-rose m-2 font-weight-bold">  Confirmar senha : </p>
+        <div class="mb-3">
+            <span class="text-rose m-2 font-weight-bold">  Confirmar senha : </span>
             <label class="form-label"></label>
             <%= form.text_area :password_confirmation, maxlength: 6, disabled: true, class: "bg-light form-control" %>
         </div>
@@ -23,7 +23,7 @@
             <input type="checkbox" id="pass" name="pass">
             <label for="pass">alterar senha?</label>
         </div>
-        <div class="input-group input-group-outline focused is-focused mb-3">
+        <div class="mb-3">
             <%= form.select(:role_id, @roles.collect {|role| [role.username, role.id]}, class: "bg-light form-control", prompt: 'select') %>
         </div>
             <div class="text-center">

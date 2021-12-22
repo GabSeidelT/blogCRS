@@ -2,7 +2,7 @@
     <div class="bg-gradient-light border-radius-lg">
         <%= form_with model: @comment, local: false, :html => {:id =>'comment-form' } do |form| %>
                 <div>
-                    <%= form.text_area :content, maxlength: 255, class: "bg-light form-control"%>
+                    <%= form.text_area :content, maxlength: 255, required: true, class: "bg-light form-control"%>
                     <%= form.submit 'Salvar', class: "btn btn-lg text-white bg-primary btn-lg m-2" %>
                     <%= form.hidden_field :post_id, :value => @post.id %>
                 </div>

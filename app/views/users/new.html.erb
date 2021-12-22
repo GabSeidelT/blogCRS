@@ -1,20 +1,14 @@
-<div class="card-body bg-gradient-light border-radius-lg container ml-8">
+<div class="card-body bg-gradient-light border-radius-lg m-4 ml-8">
     <%= form_for @user, url: user_create_path, method: :post do |form| %>
-            <div class="input-group input-group-outline focused is-focused mb-3">
-            <p class="text-rose m-2 font-weight-bold">  Novo Usuário </p>
-            <label class="form-label"></label>
-        </div>
         <div class="mb-3">
             <span class="text-rose m-2 font-weight-bold">  Email : </span>
-            <label class="form-label"></label>
             <%= form.text_field :email, class: "bg-light form-control"%>
         </div>
-        <div class="input-group input-group-outline focused is-focused mb-3">
-            <p class="text-rose m-2 font-weight-bold">  Senha : </p>
-            <label class="form-label"></label>
+        <div class="mb-3">
+            <span class="text-rose m-2 font-weight-bold">  Senha : </span>
             <%= form.text_area :password, maxlength: 6, class: "bg-light form-control" %>
         </div>
-        <div class="input-group input-group-outline focused is-focused mb-3">
+        <div class="mb-3">
             <li>
                 <%= form.select(:role_id, @roles.collect {|role| [role.username, role.id]}, class: "bg-light form-control", prompt: 'Cargo') %>
             </li>
